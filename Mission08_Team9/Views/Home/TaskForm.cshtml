@@ -1,0 +1,79 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* 
+    ????PROBLEMS ON THIS PAGE????
+    
+    Make sure:
+        The "asp-for" is properly set
+        The error validation line is correct
+        Model name is correct
+
+*@
+
+@model TaskContext
+
+<style>
+    label {
+        text-align: left
+    }
+</style>
+
+<h1>Add a Task</h1>
+
+<div>
+    <form method="post" class="d-inline-block border border-dark shadow p-5 mb-5 bg-white rounded">
+
+        @* TaskId *@
+        <input type="hidden" asp-for="TaskId"/>
+
+        @* Task Name (required)*@
+        <label asp-for="TaskName">Task Name</label>
+        <br />
+        <input asp-for="TaskName" />
+        <br />
+
+        @* Due Date *@
+        <label asp-for="DueDate">Due Date</label>
+        <br />
+        <input asp-for="DueDate" />
+        <br />
+
+        @* Quadrant (required) *@
+        <label asp-for="Quadrant">Quadrant Number</label>
+        <br />
+        <input asp-for="Quadrant" />
+        <br />
+
+        @* Category (dropdown) *@
+        @* Pulls categories from the category table*@
+        <label asp-for="CategoryId">Category</label>
+        <br />
+        <select>
+            <option value="">Select a Category</option>
+            @foreach (CategoryContext c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+        </select>
+        <br />
+
+        @* Completed (T/F) *@
+        <label asp-for="Completed">Completed?</label>
+        <br />
+        <select asp-for="Completed">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select>
+        <br />
+
+        @* Submit Button *@
+        <button class="btn border border-dark bg-dark bg-opacity-25 rounded mt-2" action="submit">Add</button>
+
+        @* Validation Error Text *@
+        <div class="text-danger" asp-validation-summary="All"></div>
+    </form>
+</div>
