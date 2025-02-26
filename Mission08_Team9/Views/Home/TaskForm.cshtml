@@ -10,8 +10,11 @@
     Make sure:
         The "asp-for" is properly set
         The error validation line is correct
+        Model name is correct
 
 *@
+
+@model TaskContext
 
 <style>
     label {
@@ -23,6 +26,7 @@
 
 <div>
     <form method="post" class="d-inline-block border border-dark shadow p-5 mb-5 bg-white rounded">
+
         @* TaskId *@
         <input type="hidden" asp-for="TaskId"/>
 
@@ -50,7 +54,7 @@
         <br />
         <select>
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Categories)
+            @foreach (CategoryContext c in ViewBag.Categories)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }
