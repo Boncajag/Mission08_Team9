@@ -17,7 +17,7 @@ namespace Mission08_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var tasks = _context.Tasks.ToList();
+            var tasks = _context.Task.ToList();
             
             return View();
         }
@@ -25,7 +25,7 @@ namespace Mission08_Team9.Controllers
         [HttpPost]
         public IActionResult Index(int id)
         {
-            var tasks = _context.Tasks.ToList();
+            var tasks = _context.Task.ToList();
 
             return View();
         }
