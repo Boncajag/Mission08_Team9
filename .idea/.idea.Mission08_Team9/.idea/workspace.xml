@@ -10,6 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="79b9be6e-e92d-4629-b111-a07bb3fd0337" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mission08_Team9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mission08_Team9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mission08_Team9/Models/EFTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team9/Models/EFTaskRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mission08_Team9/Models/ITaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team9/Models/ITaskRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mission08_Team9/Models/TaskContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team9/Models/TaskContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="database/models" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,6 +39,11 @@
     &quot;accountId&quot;: &quot;c64819b3-f6b8-4652-a7fa-243d9c275a18&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/brandonfromm/Documents/GitHub/Mission08_Team9/Mission08_Team9/Views/Home/TaskForm.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/brandonfromm/Documents/GitHub/Mission08_Team9/Mission08_Team9/Views/Home/TaskForm.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -100,13 +108,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740605321177</updated>
-      <workItem from="1740605322303" duration="3457000" />
+      <workItem from="1740605322303" duration="9060000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
