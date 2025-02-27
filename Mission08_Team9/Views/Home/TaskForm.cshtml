@@ -14,7 +14,7 @@
 
 *@
 
-@model TaskContext
+@model ToDoTask
 
 <style>
     label {
@@ -54,7 +54,7 @@
         <br />
         <select>
             <option value="">Select a Category</option>
-            @foreach (CategoryContext c in ViewBag.Categories)
+            @foreach (Category c in ViewBag.Category)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }
