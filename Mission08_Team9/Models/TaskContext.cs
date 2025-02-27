@@ -8,6 +8,6 @@ public class TaskContext : DbContext
     {
     }
 
-    public DbSet<Task> Tasks { get; set; }
+    public DbSet<ToDoTask> Tasks { get; set; }
     public DbSet<Category> Categories { get; set; }
 }
