@@ -9,7 +9,8 @@ public class EFTaskRepository : ITaskRepository
         _context = temp;
     }
     
-    public List<ToDoTask> Tasks => _context.Tasks.ToList();
+    public List<ToDoTask> Task => _context.Task.ToList();
+    public List<Category> Category => _context.Category.ToList();
 
     public void AddTask(ToDoTask toDoTask)
     {
