@@ -9,11 +9,11 @@ public class EFTaskRepository : ITaskRepository
         _context = temp;
     }
     
-    public List<Task> Tasks => _context.Tasks.ToList();
+    public List<ToDoTask> Tasks => _context.Tasks.ToList();
 
-    public void AddTask(Task task)
+    public void AddTask(ToDoTask toDoTask)
     {
-        _context.Add(task);
+        _context.Add(toDoTask);
         _context.SaveChanges();
     }
 }
