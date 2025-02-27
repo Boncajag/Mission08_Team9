@@ -7,9 +7,10 @@ namespace Mission08_Team9.Controllers
 {
     public class HomeController : Controller
     {
-        private ITaskRespository _context; // Declare model context object
+        
+        private TaskContext _context; // Declare model context object
 
-        public HomeController(ITaskRespository TaskContext) // Constructor for model context object
+        public HomeController(TaskContext TaskContext) // Constructor for model context object
         {
             _context = TaskContext;
         }
@@ -17,16 +18,12 @@ namespace Mission08_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var tasks = _context.Task.ToList();
-            
             return View();
         }
 
         [HttpPost]
         public IActionResult Index(int id)
         {
-            var tasks = _context.Task.ToList();
-
             return View();
         }
 
@@ -39,7 +36,9 @@ namespace Mission08_Team9.Controllers
         [HttpPost]
         public IActionResult Add(Task taskToAdd)
         {
-            _context.AddTask(taskToAdd);
+            ViewBag.Category = _context.Category
+                .OrderBy(cat => cat.CategoryName)
+                .ToList();
             
             return View();
         }
@@ -53,8 +52,6 @@ namespace Mission08_Team9.Controllers
         [HttpPost]
         public IActionResult Edit(Task taskToEdit)
         {
-            _context.AddTask(taskToEdit);
-
             return View();
         }
     }
