@@ -18,15 +18,8 @@ namespace Mission08_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Quadrants");
         }
-
-        [HttpPost]
-        public IActionResult Index(int id)
-        {
-            return View();
-        }
-        
 
 
         [HttpGet]
@@ -35,8 +28,6 @@ namespace Mission08_Team9.Controllers
             ViewBag.Categories = _context.Categories.ToList();
             return View("TaskForm", new ToDoTask()); // Ensure a new, empty task object is passed
         }
-
-
 
 
         [HttpPost]
@@ -67,28 +58,6 @@ namespace Mission08_Team9.Controllers
             return RedirectToAction("Quadrants");
         }
 
-
-
-
-        /*
-        
-        I had to comment these out to get the program to work
-        
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            return View("TaskForm");
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Task taskToEdit)
-        {
-            return View();
-        }
-        
-        */
-        
-        [HttpGet]
         [HttpGet]
         public IActionResult Quadrants()
         {
