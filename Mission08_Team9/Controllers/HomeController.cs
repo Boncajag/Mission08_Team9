@@ -7,6 +7,7 @@ namespace Mission08_Team9.Controllers
 {
     public class HomeController : Controller
     {
+        
         private TaskContext _context; // Declare model context object
 
         public HomeController(TaskContext TaskContext) // Constructor for model context object
@@ -17,16 +18,12 @@ namespace Mission08_Team9.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var tasks = _context.Tasks.ToList();
-            
             return View();
         }
 
         [HttpPost]
         public IActionResult Index(int id)
         {
-            var tasks = _context.Tasks.ToList();
-
             return View();
         }
         

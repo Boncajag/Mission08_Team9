@@ -44,6 +44,7 @@
         <br />
         <select asp-for="CategoryId" class="form-control">
             <option value="">Select a Category</option>
+
             @if (ViewBag.Categories != null)
             {
                 @foreach (var c in ViewBag.Categories)
