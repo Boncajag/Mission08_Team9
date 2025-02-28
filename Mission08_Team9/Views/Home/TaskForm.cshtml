@@ -4,18 +4,7 @@
 @{
 }
 
-
-
 @model ToDoTask
-
-@* 
-    ????PROBLEMS ON THIS PAGE??????????????????????????????????????????????????????????????????????????????????????
-
-    Make sure:
-        The "asp-for" is properly set
-        The error validation line is correct
-        Model name is correct
-*@
 
 <style>
     label {
@@ -53,22 +42,30 @@
         @* Pulls categories from the category table*@
         <label asp-for="CategoryId">Category</label>
         <br />
-        <select>
+        <select asp-for="CategoryId" class="form-control">
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Categories)
+            @if (ViewBag.Categories != null)
             {
-                <option value="@c.CategoryId">@c.CategoryName</option>
+                @foreach (var c in ViewBag.Categories)
+                {
+                    <option value="@c.CategoryId">@c.CategoryName</option>
+                }
             }
         </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+
+
+
         <br />
 
         @* Completed (T/F) *@
         <label asp-for="Completed">Completed?</label>
         <br />
-        <select asp-for="Completed">
-            <option value="false">No</option>
-            <option value="true">Yes</option>
+        <select asp-for="Completed" class="form-control">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
         </select>
+        <span asp-validation-for="Completed" class="text-danger"></span>
         <br />
 
         @* Submit Button *@
