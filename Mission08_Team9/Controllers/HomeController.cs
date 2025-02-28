@@ -39,7 +39,7 @@ namespace Mission08_Team9.Controllers
             ViewBag.Category = _context.Category
                 .OrderBy(cat => cat.CategoryName)
                 .ToList();
-            
+
             return View();
         }
 
