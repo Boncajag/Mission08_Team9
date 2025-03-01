@@ -8,71 +8,96 @@
 
 <style>
     label {
-        text-align: left
+        text-align: left;
     }
 </style>
 
 <h1>Add a Task</h1>
 
-<div>
-    <form method="post" class="d-inline-block border border-dark shadow p-5 mb-5 bg-white rounded">
+<div class="container">
+    <div class="row">
+        <!-- Small Quadrant for display -->
+        <div class="col-md-4">
+            <div class="p-2 border border-2 border-dark shadow-sm rounded bg-light small-version">
+                <h6 class="fw-bold text-center">Task Quadrants</h6>
+                <hr>
+                <div class="row text-center">
+                    <div class="col-6 border-end border-dark border-2">
+                        <p>Quadrant I</p>
+                        <p>(Important / Urgent)</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Quadrant II</p>
+                        <p>(Important / Not Urgent)</p>
+                    </div>
+                    <div class="col-6 border-end border-dark border-2 border-top pt-2">
+                        <p>Quadrant III</p>
+                        <p>(Not Important / Urgent)</p>
+                    </div>
+                    <div class="col-6 border-top border-dark border-2 pt-2">
+                        <p>Quadrant IV</p>
+                        <p>(Not Important / Not Urgent)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        @* TaskId *@
-        <input type="hidden" asp-for="TaskId"/>
+        <!-- Task Form -->
+        <div class="col-md-4">
+            <form method="post" class="border border-2 border-dark shadow-sm p-5 mb-5 bg-light rounded">
+                @* TaskId *@
+                <input type="hidden" asp-for="TaskId"/>
 
-        @* Task Name (required)*@
-        <label asp-for="TaskName">Task Name</label>
-        <br />
-        <input asp-for="TaskName" />
-        <br />
+                @* Task Name (required) *@
+                <label asp-for="TaskName">Task Name</label>
+                <br/>
+                <input asp-for="TaskName" class="form-control"/>
+                <br/>
 
-        @* Due Date *@
-        <label asp-for="DueDate">Due Date</label>
-        <br />
-        <input asp-for="DueDate" />
-        <br />
+                @* Due Date *@
+                <label asp-for="DueDate">Due Date</label>
+                <br/>
+                <input asp-for="DueDate" class="form-control"/>
+                <br/>
 
-        @* Quadrant (required) *@
-        <label asp-for="Quadrant">Quadrant Number</label>
-        <br />
-        <input asp-for="Quadrant" />
-        <br />
+                @* Quadrant (required) *@
+                <label asp-for="Quadrant">Quadrant Number</label>
+                <br/>
+                <input asp-for="Quadrant" class="form-control"/>
+                <br/>
 
-        @* Category (dropdown) *@
-        @* Pulls categories from the category table*@
-        <label asp-for="CategoryId">Category</label>
-        <br />
-        <select asp-for="CategoryId" class="form-control">
-            <option value="">Select a Category</option>
+                @* Category (dropdown) *@
+                <label asp-for="CategoryId">Category</label>
+                <br/>
+                <select asp-for="CategoryId" class="form-control">
+                    <option value="">Select a Category</option>
+                    @if (ViewBag.Categories != null)
+                    {
+                        @foreach (var c in ViewBag.Categories)
+                        {
+                            <option value="@c.CategoryId">@c.CategoryName</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                <br/>
 
-            @if (ViewBag.Categories != null)
-            {
-                @foreach (var c in ViewBag.Categories)
-                {
-                    <option value="@c.CategoryId">@c.CategoryName</option>
-                }
-            }
-        </select>
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                @* Completed (T/F) *@
+                <label asp-for="Completed">Completed?</label>
+                <br/>
+                <select asp-for="Completed" class="form-control">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <span asp-validation-for="Completed" class="text-danger"></span>
+                <br/>
 
+                @* Submit Button *@
+                <button class="btn btn-outline-dark" type="submit">Add</button>
 
-
-        <br />
-
-        @* Completed (T/F) *@
-        <label asp-for="Completed">Completed?</label>
-        <br />
-        <select asp-for="Completed" class="form-control">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </select>
-        <span asp-validation-for="Completed" class="text-danger"></span>
-        <br />
-
-        @* Submit Button *@
-        <button class="btn border border-dark bg-dark bg-opacity-25 rounded mt-2" action="submit">Add</button>
-
-        @* Validation Error Text *@
-        <div class="text-danger" asp-validation-summary="All"></div>
-    </form>
+                @* Validation Error Text *@
+                <div class="text-danger" asp-validation-summary="All"></div>
+            </form>
+        </div>
+    </div>
 </div>
